@@ -57,4 +57,3 @@ CourseList.getAll = (id, result) => {
 
 
 module.exports = CourseList
-module.exports = Prerequisites;
