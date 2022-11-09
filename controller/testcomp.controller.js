@@ -1,5 +1,5 @@
 const CourseList = require('../models/testcomp.models');
-const Prerequisites = require('../models/testcomp.models');
+const Prerequisites = require('../models/prereq.models');
 
 // Retrieve all data in the table from the database (with condition).
 exports.getTheTable = (req, res) => {
@@ -20,7 +20,7 @@ exports.getTheTable = (req, res) => {
       });
 };
 
-exports.getTheTable2 = (req, res) => {
+exports.getPrereqTable = (req, res) => {
   const course_rec_id = null;
 
   Prerequisites.getAll(course_rec_id, (err, data) => {

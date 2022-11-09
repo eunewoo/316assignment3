@@ -20,9 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 //api added
 app.get('/api/courseman/getCourses', TestComp.getTheTable);
 
-
-
-app.get('/api/courseman/prereqs', TestComp.getTheTable2);
+app.get('/api/courseman/prereqs', TestComp.getPrereqTable);
 
 
 // simple route
