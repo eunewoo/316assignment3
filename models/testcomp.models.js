@@ -2,9 +2,10 @@ const sql = require("./db.js");
 
 // constructor
 const CourseList = function(course) {
-  this.id = course.id;
-  this.prerequisites = course.prerequisites;
-  this.description = course.description;
+  this.course_id = course.course_id;
+  this.course_name = course.course_name;
+  this.course_seatsremaining = course.course_seatsremaining;
+  this.course_capacity = course.course_capacity;
 };
 
 
@@ -12,7 +13,7 @@ const CourseList = function(course) {
 
 CourseList.getAll = (id, result) => {
     console.log("getAll!");
-    let query = "SELECT * FROM courseList";
+    let query = "SELECT * FROM courses";
       console.log("id: " + id);
     if (id) {
       query += ` WHERE id = '${id}'`;

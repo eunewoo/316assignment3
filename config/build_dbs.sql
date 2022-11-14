@@ -9,7 +9,6 @@ CREATE TABLE IF NOT EXISTS students(
   last_name VARCHAR(256),
   password VARCHAR(256),
   level CHAR(2),
-  registered VARCHAR(256)
   )
   ;
 

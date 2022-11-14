@@ -5,12 +5,12 @@ const Prerequisites = function(prereq) {
     this.course_prereq_rec_id = prereq.course_prereq_rec_id;
   };
 
-Prerequisites.getAll = (course_rec_id, result) => {
+Prerequisites.getAll = (id, result) => {
     console.log("getAll!");
     let query = "SELECT * FROM prereqs";
-      console.log("id: " + course_rec_id);
-    if (course_rec_id) {
-      query += ` WHERE id = '${course_rec_id}'`;
+      console.log("id: " + id);
+    if (id) {
+      query += ` WHERE id = '${id}'`;
     }
   
     sql.query(query, (err, res) => {

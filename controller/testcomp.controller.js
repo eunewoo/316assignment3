@@ -15,7 +15,7 @@ exports.getTheTable = (req, res) => {
         else {
             // console.log("Server: res_sending: " + data);
 
-            res.json({"courses" : data});
+            res.json(data);
         }
       });
 };
@@ -33,7 +33,7 @@ exports.getPrereqTable = (req, res) => {
       else {
           // console.log("Server: res_sending: " + data);
 
-          res.json({"prereqs" : data});
+          res.json(data);
       }
     });
 };
