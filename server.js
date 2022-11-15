@@ -27,15 +27,35 @@ console.log(TestComp.getTheTable);
 app.get('/api/courseman/prereqs', TestComp.getPrereqTable);
 
 app.post("/api/student", (req,res)=>{
+  const student_id = req.body.student_id;
   const first_name = req.body.first_name;
+  const last_name = req.body.last_name;
   // console.log(req.body);
-  sql2.query("INSERT INTO students (first_name) values (?)",[first_name],
+  sql2.query("INSERT INTO students (student_id, first_name, last_name) values (?, ?, ?)",[student_id, first_name, last_name],
   function(err,rows,fields){
       if(err){
-          console.log("실패");
+          console.log("Fail");
           // console.log(err);
       }else{
-          console.log("성공");
+          console.log("Success");
+          // console.log(rows);
+      };
+  });
+
+  
+});
+
+app.post("/api/transcript", (req,res)=>{
+  const student_id = req.body.student_id;
+  const course_name = req.body.course_name;
+  // console.log(req.body);
+  sql2.query("INSERT INTO transcript (student_id, course_name) values (?, ?)",[student_id, course_name],
+  function(err,rows,fields){
+      if(err){
+          console.log("Fail");
+          // console.log(err);
+      }else{
+          console.log("Success");
           // console.log(rows);
       };
   });
@@ -60,3 +80,7 @@ const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
+
+
+
+
