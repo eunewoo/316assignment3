@@ -26,6 +26,8 @@ console.log(TestComp.getTheTable);
 
 app.get('/api/courseman/prereqs', TestComp.getPrereqTable);
 
+app.get('/api/courseman/students', TestComp.getStudentTable);
+
 app.post("/api/student", (req,res)=>{
   const student_id = req.body.student_id;
   const first_name = req.body.first_name;
