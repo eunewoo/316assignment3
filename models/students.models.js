@@ -2,15 +2,15 @@ const sql = require("./db.js");
 
 const Students = function(student) {
     this.student_id = student.student_id;
-    this.password = student.password;
+    //this.password = student.password;
   };
 
 Students.getAll = (id, result) => {
     console.log("getAll!");
-    let query = "SELECT * FROM students";
+    let query = `SELECT * FROM students WHERE student_id = ${id}`;
       console.log("id: " + id);
     if (id) {
-      query += ` WHERE id = '${id}'`;
+      //query += ` WHERE id = '${id}'`;
     }
   
     sql.query(query, (err, res) => {

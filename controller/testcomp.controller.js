@@ -40,9 +40,11 @@ exports.getPrereqTable = (req, res) => {
 };
 
 exports.getStudentTable = (req, res) => {
-  const student_id = null;
+  console.log('params1', req.params.id);
+  const student_id = req.student_id;
+  console.log('student_id', student_id);
 
-  Students.getAll(student_id, (err, data) => {
+  Students.getAll(req.params.id, (err, data) => {
     if (err)
       res.status(500).send({
         message:
