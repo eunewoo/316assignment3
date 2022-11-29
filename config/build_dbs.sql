@@ -8,18 +8,18 @@ CREATE TABLE IF NOT EXISTS students(
   first_name VARCHAR(256),
   last_name VARCHAR(256),
   password VARCHAR(256),
-  level CHAR(2),
+  level CHAR(2)
   )
   ;
 
 INSERT INTO students (student_id, first_name, last_name, password, level)
-       VALUES (123456789, "Harry", "Chung", "", "U2", "");
+       VALUES (123456789, "Harry", "Chung", "e38804c45d255359322d3a3c9d58522fe0528e87784b6724fca79dd67b891dd", "U2");
 
 INSERT INTO students (student_id, first_name, last_name, password, level)
-       VALUES (123456790, "Matt", "Lee", "", "U3", "");
+       VALUES (123456790, "Matt", "Lee", "0124f7d9cfb7da14c498781ff49752edf89cb08574cb19785aaa2a7b4722f5ed", "U3");
 
 INSERT INTO students (student_id, first_name, last_name, password, level)
-       VALUES (123456791, "SUE", "Park", "", "U4", "");
+       VALUES (123456791, "SUE", "Park", "13a0461de73c38bf3aa73ccd4f207170cf1dece6300c9fc0248a9e0d70cb995a", "U4");
 
 
 CREATE TABLE IF NOT EXISTS courses(
@@ -131,5 +131,6 @@ CREATE TABLE IF NOT EXISTS transcript (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   student_id INT,
   course_name varchar(80) DEFAULT NULL);
+
 
   
